@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from controllers.usuarios_controller import obtener_usuarios, agregar_usuario
+from controllers.usuarios_controller import *
 
 
 usuarios_routes = Blueprint('usuarios', __name__)
@@ -18,4 +18,16 @@ def get_usuarios():
 def post_usuario():
     data = request.json
     mensaje = agregar_usuario(data['nombre'], data['email'])
+    return jsonify({"mensaje": mensaje})
+
+
+@usuarios_routes.route('/api/usuarios/<id>', methods=['PUT'])
+def put_usuario(id):
+    data = request.json
+    mensaje = actualizar_usuario(id, data['nombre'], data['email'])
+    return jsonify({"mensaje": mensaje})
+
+@usuarios_routes.route('/api/usuarios/<id>', methods=['DELETE'])
+def delete_usuario(id):
+    mensaje = eliminar_usuario(id)
     return jsonify({"mensaje": mensaje})

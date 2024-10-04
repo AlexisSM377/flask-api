@@ -1,1 +1,1 @@
-from .usuarios_controller import obtener_usuarios, agregar_usuario
+from .usuarios_controller import obtener_usuarios, agregar_usuario, actualizar_usuario, eliminar_usuario

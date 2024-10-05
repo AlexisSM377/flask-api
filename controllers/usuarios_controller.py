@@ -13,14 +13,20 @@ def agregar_usuario(data):
 
 def actualizar_usuario(id, nombre, email):
     usuario = Usuario.query.get(id)
-    usuario.nombre = nombre
-    usuario.email = email
-    db.session.commit()
-    return "Usuario actualizado correctamente"
+    if usuario:
+        usuario.nombre = nombre
+        usuario.email = email
+        db.session.commit()
+        return "Usuario actualizado correctamente"
+    else:
+        return "Usuario no encontrado"
 
 def eliminar_usuario(id):
     usuario = Usuario.query.get(id)
-    db.session.delete(usuario)
-    db.session.commit()
-    return "Usuario eliminado correctamente"
+    if usuario:
+        db.session.delete(usuario)
+        db.session.commit()
+        return "Usuario eliminado correctamente"
+    else:
+        return "Usuario ya no existe"
 

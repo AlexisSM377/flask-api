@@ -17,7 +17,7 @@ def get_usuarios():
 @usuarios_routes.route('/api/usuarios', methods=['POST'])
 def post_usuario():
     data = request.json
-    mensaje = agregar_usuario(data['nombre'], data['email'])
+    mensaje = agregar_usuario(data)
     return jsonify({"mensaje": mensaje})
 
 

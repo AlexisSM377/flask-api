@@ -2,4 +2,4 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-from models.usuario import Usuario
+from models.shoe import Shoe, Brand, Category

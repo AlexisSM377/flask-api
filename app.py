@@ -4,6 +4,9 @@ from models import db
 from routes import init_routes
 from flask_swagger_ui import get_swaggerui_blueprint
 from swagger import swagger_template
+from routes.shoes import shoes_routes
+from routes.brands import brands_routes
+from routes.categories import categories_routes
 
 app = Flask(__name__)
 
@@ -19,7 +22,6 @@ with app.app_context():
 
 # Registrar las rutas de la aplicación
 init_routes(app)
-
 
 #Configuracion de Swagger UI
 SWAGGER_URL = '/swagger'

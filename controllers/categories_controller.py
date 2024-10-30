@@ -1,4 +1,4 @@
-from models.shoe import Category
+from models.category import Category
 from models import db
 
 def obtener_categorias():

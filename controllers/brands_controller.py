@@ -1,4 +1,4 @@
-from models.shoe import Brand
+from models.brand import Brand
 from models import db
 
 def obtener_marcas():
